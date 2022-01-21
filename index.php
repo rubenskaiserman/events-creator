@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php 
+    include "classes/classes.php";
+    
+    if($_POST["isSigning"] == 1){
+        $user = new User($_POST["email"], $_POST["name"], $_POST["password"]);
+        session_start();
+        $_SESSION["email"] = $user->email;
+        $_SESSION["name"] = $user->name;
+    }
+    
+
+?>
 <html>
     <head>
         <title>User's Calendar</title>
