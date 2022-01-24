@@ -7,6 +7,10 @@ function showForm(){
 
 }
 
+function hideForm(){
+    document.querySelector("form").style.display = "none"
+}
+
 function unableTime(){
     if(document.querySelectorAll(".time")[0].style.display == "flex"){
         document.querySelectorAll(".time")[0].style.display = "none"
