@@ -24,14 +24,13 @@ button {
     border: solid aqua 3px;
     font-size: 150%;
     margin: 5px 10px 0 0;
-    background-color: #222;
-    background-color: aqua; 
-    color: #222;
+    background-color: #222; 
+    color: aqua;
     font-weight: 800;
 }
 button:hover{
-    background-color: #222;
-    color: aqua;
+    background-color: aqua;
+    color: #222;
 }
 
 form{
@@ -40,12 +39,14 @@ form{
     top: 150px;
     left: 100px;
     box-shadow: 0px 0px 30px 5px #090909;
+    display: none;
 }
 input, textarea{
     background-color: #222;
     color: #ccc;
     border: #ccc 2px solid;
     padding: 10px;
+    margin: 0 0 20px 0;
 }
 #title{
     width: 300px;
