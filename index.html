@@ -35,9 +35,9 @@
             <textarea type="text" name="discription" placeholder="Discription" id="discription" contenteditable='true'></textarea><br>
             <input type="date" name="start" placeholder="Start Date" required> <br>
             <input type="date" name="end" placeholder="End date" required> <br>
-            <input type="checkbox" onclick="unableTime()"> <span>All day</span> <br>
-            <input type="time" name="shour" placeholder="10:00"> <br>
-            <input type="time" name="ehour" placeholder="23:59"> <br>
+            <input type="checkbox" onclick="unableTime()" id="all-day"> <span>All day(s)</span> <br>
+            <input type="time" name="shour" placeholder="10:00" class="time"> <br>
+            <input type="time" name="ehour" placeholder="23:59" class="time"> <br>
         </form>
 
         <button id="add" onclick="showForm()" >
