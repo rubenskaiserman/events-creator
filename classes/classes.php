@@ -13,8 +13,7 @@
         }
 
         public function createUser(){
-            $test = pg_connect("host=localhost port=5432 dbname=kaiserman user=kaiserman password=chakalaka") or die("could not connect");
-            echo $test;  
+            $resourse = pg_connect("host=localhost port=5432 dbname=events_creator user=creator password=events") or die("could not connect");
         }
     }
 
