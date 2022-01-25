@@ -1,12 +1,14 @@
 <?php 
     include 'classes/classes.php'; 
 
+    $resource = pg_connect("host=localhost port=5432 dbname=events_creator user=creator password=events") or die("could not connect");
+
     if(!isset($_SESSION)){
         if($_POST["is-signing-up"] == "on"){
             session_start();
             $user = new User($_POST["email"], $_POST["name"], $_POST["password"]);
             ini_set('display_errors', 1);
-            $user->createUser();
+            $user->createUser($resource);
         }
         else{
             header("Location: login/index.html");

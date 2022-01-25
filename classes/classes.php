@@ -12,8 +12,9 @@
             $this->password = $password;
         }
 
-        public function createUser(){
-            $resourse = pg_connect("host=localhost port=5432 dbname=events_creator user=creator password=events") or die("could not connect");
+        public function createUser($resource){
+            $array = array("name"=>$this->name, "email"=>$this->email, "password"=>$this->password);
+            pg_insert($resource, 'users', $array);
         }
     }
 
