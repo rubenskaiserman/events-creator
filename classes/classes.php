@@ -13,8 +13,8 @@
         }
 
         public function createUser(){
-            //cria o user no banco de dados
-            //Linkar o user com o userId
+            $test = pg_connect("host=localhost port=5432 dbname=kaiserman user=kaiserman password=chakalaka") or die("could not connect");
+            echo $test;  
         }
     }
 
