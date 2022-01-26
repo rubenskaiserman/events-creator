@@ -63,13 +63,13 @@
             <!-- Espaço para os eventos criados -->
         </main>
         <form id="adding" method="post" action="create-event.php">
-            <input type="text" name="name" placeholder="Title" required id="title" autofocus> <br>
+            <input type="text" name="title" placeholder="Title" required id="title" autofocus> <br>
             <textarea type="text" name="discription" placeholder="Discription" id="discription" contenteditable='true'></textarea><br>
-            <input type="date" name="start" placeholder="Start Date" required> <br>
-            <input type="date" name="end" placeholder="End date" required> <br>
+            <input type="date" name="startdate" required> <br>
+            <input type="date" name="enddate" placeholder="End date" required> <br>
             <input type="checkbox" onclick="unableTime()" id="all-day"> <span>All day(s)</span> <br>
-            <input type="time" name="shour" placeholder="10:00" class="time"> <br>
-            <input type="time" name="ehour" placeholder="23:59" class="time"> <br>
+            <input type="time" name="starthour" value="10:00" class="time"> <br>
+            <input type="time" name="endhour" value="23:59" class="time"> <br>
             <input type="submit">
             <button onclick="hideForm()">Cancel</button>
         </form>
