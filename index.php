@@ -1,14 +1,27 @@
 <?php 
     include 'classes/classes.php'; 
+    ini_set('display_errors', 1);
 
     $resource = pg_connect("host=localhost port=5432 dbname=events_creator user=creator password=events") or die("could not connect");
 
     if(!isset($_SESSION)){
-        if($_POST["is-signing-up"] == "on"){
+        if($_POST["is-signing-up"]=="on"){
             session_start();
             $user = new User($_POST["email"], $_POST["name"], $_POST["password"]);
-            ini_set('display_errors', 1);
             $user->createUser($resource);
+        }
+        else if($_POST["is-login-in"]=="on"){
+            pg_send_query($resource, "SELECT * FROM users WHERE email = '{$_POST["email"]}'");
+            $query = pg_get_result($resource);
+            $password = pg_fetch_result($query, 0, "password");
+            if (!$password == $_POST["password"]){
+                header("Location: login/index.html");    
+            } else {
+                session_start();
+                $user = new User($_POST["email"], pg_fetch_result($query, 0, "name"), $password);
+                $user->userId = pg_fetch_result($query, 0, "userId");
+                echo $user->userId;
+            }
         }
         else{
             header("Location: login/index.html");
