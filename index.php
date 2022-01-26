@@ -9,18 +9,27 @@
             session_start();
             $user = new User($_POST["email"], $_POST["name"], $_POST["password"]);
             $user->createUser($resource);
+            $_SESSION["name"] = $user->name;
+            $_SESSION["email"] = $user->email;
+            $_SESSION["userId"] = $user->userId;
+            
         }
         else if($_POST["is-login-in"]=="on"){
             pg_send_query($resource, "SELECT * FROM users WHERE email = '{$_POST["email"]}'");
             $query = pg_get_result($resource);
             $password = pg_fetch_result($query, 0, "password");
+
             if (!$password == $_POST["password"]){
-                header("Location: login/index.html");    
+                header("Location: login/index.html"); 
+
             } else {
                 session_start();
                 $user = new User($_POST["email"], pg_fetch_result($query, 0, "name"), $password);
                 $user->userId = pg_fetch_result($query, 0, "userId");
-                echo $user->userId;
+                $_SESSION["name"] = $user->name;
+                $_SESSION["email"] = $user->email;
+                $_SESSION["userId"] = $user->userId;
+
             }
         }
         else{
