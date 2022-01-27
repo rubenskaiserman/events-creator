@@ -12,7 +12,7 @@
             $_SESSION["name"] = $user->name;
             $_SESSION["email"] = $user->email;
             $_SESSION["userId"] = $user->userId;
-            setcookie("userId", $_SESSION["userId"], time() + 20);
+            setcookie("userId", $_SESSION["userId"],time() + 60 * 60 * 3);
             
         }
         else if($_POST["is-login-in"]=="on"){
@@ -68,7 +68,25 @@
             <li><span>Eventating</span></li>
         </header>
         <main>
-            <!-- Espaço para os eventos criados -->
+            <?php
+                $conn = pg_connect("host=localhost port=5432 dbname=events_creator user=creator password=events") or die("could not connect");
+                pg_send_query($conn, "SELECT * FROM events WHERE userid = '{$_COOKIE["userId"]}'");
+                $res = pg_get_result($resource);
+                $length = pg_num_rows($res);
+                for($i = 0; $i < $length; $i ++){
+                    $title = pg_fetch_result($res, $i, "title");
+                    $date = pg_fetch_result($res, $i, "startdate");
+                    $discription = pg_fetch_result($res, $i, "discription");
+                    echo "
+                    <div>
+                        <h2> $title </h2> <p> $date </p> 
+                        <br>
+                        <h3> $discription </h3>
+                    
+                    </div>
+                    ";
+                }
+            ?>
         </main>
         <form id="adding" method="post" action="create-event.php">
             <input type="text" name="title" placeholder="Title" required id="title" autofocus> <br>

@@ -6,5 +6,5 @@
     $_POST = array_merge($_POST, array("userid"=>$_COOKIE["userId"]));
     echo $_POST["userid"];
     pg_insert($resource, 'events', $_POST );
-    // header("Location: ../index.php");    
+    header("Location: ../index.php");    
 ?>
