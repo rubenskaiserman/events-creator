@@ -1,0 +1,50 @@
+<!-- <?php 
+    include "classes/classes.php";
+    
+    if($_POST["isSigning"] == 1){
+        $user = new User($_POST["email"], $_POST["name"], $_POST["password"]);
+        session_start();
+        $_SESSION["email"] = $user->email;
+        $_SESSION["name"] = $user->name;
+    }
+    
+
+?> -->
+<html>
+    <head>
+        <title>Eventating</title>
+        
+        <meta charset="utf-8">
+        <meta name="description" content="This is a personal calendar where you can control your events">
+
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="shortcut icon" href="images/calendar.png" type="image/png">
+        <script src="js/main.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <li><span>Eventating</span></li>
+            <li><a href="signup/index.html"><button>sign-up</button></li></a>
+            <li><button>Login</button></li>
+        </header>
+        <main>
+            <!-- Espaço para os eventos criados -->
+        </main>
+        <form id="adding" method="post" action="create-event.php">
+            <input type="text" name="name" placeholder="Title" required id="title" autofocus> <br>
+            <textarea type="text" name="discription" placeholder="Discription" id="discription" contenteditable='true'></textarea><br>
+            <input type="date" name="start" placeholder="Start Date" required> <br>
+            <input type="date" name="end" placeholder="End date" required> <br>
+            <input type="checkbox" onclick="unableTime()" id="all-day"> <span>All day(s)</span> <br>
+            <input type="time" name="shour" placeholder="10:00" class="time"> <br>
+            <input type="time" name="ehour" placeholder="23:59" class="time"> <br>
+            <input type="submit">
+            <button onclick="hideForm()">Cancel</button>
+        </form>
+
+        <button id="add" onclick="showForm()" >
+            +
+        </button>
+    </body>
+</html>
