@@ -58,7 +58,7 @@
         <meta charset="utf-8">
         <meta name="description" content="This is a personal calendar where you can control your events">
 
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
         <link rel="shortcut icon" href="images/calendar.png" type="image/png">
         <script src="js/main.js"></script>
 
@@ -77,12 +77,14 @@
                     $title = pg_fetch_result($res, $i, "title");
                     $date = pg_fetch_result($res, $i, "startdate");
                     $discription = pg_fetch_result($res, $i, "discription");
+                    $eventId = pg_fetch_result($res, $i, "eventid");
                     echo "
-                    <div>
-                        <h2> $title </h2> <p> $date </p> 
+                    <div class='event'>
+                        <h2 class='title'> $title </h2>
+                         
+                        <p class='start-date'> $date </p> 
                         <br>
-                        <h3> $discription </h3>
-                    
+                        <h3 class='discription'> $discription </h3>
                     </div>
                     ";
                 }

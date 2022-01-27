@@ -1,5 +1,5 @@
 function showForm(){
-    document.querySelector("form").style.display = "block"
+    document.querySelector("#adding").style.display = "block"
     document.querySelector("#title").focus()
 
     document.querySelectorAll(".time")[0].style.display = "flex"
