@@ -60,7 +60,7 @@
 
         <link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
         <link rel="shortcut icon" href="images/calendar.png" type="image/png">
-        <script src="js/main.js"></script>
+        <script src="js/main.js?v=<?php echo time();?>"></script>
 
     </head>
     <body>
@@ -81,6 +81,11 @@
                     echo "
                     <div class='event'>
                         <h2 class='title'> $title </h2>
+                        <form method='post' action='delete-event.php'>
+                            <input type='text' hidden value='$eventId' name='event'>
+                            <input type='submit' value='delete'>
+
+                        </form>
                          
                         <p class='start-date'> $date </p> 
                         <br>
