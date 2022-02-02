@@ -3,14 +3,24 @@
     <head>
         <title>calendar | Sign In</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="shortcut icon" href="../images/calendar.png" type="image/png">
+        <script src="js/main.js"></script>
 
 
     </head>
     <body>
         <header>
-            <h1>Login</h1>
+            <li><a href="../index.html"><img src="../images/logo.png" alt="Eventating"></a></li>
+            <li>
+            <a href="../login/index.html"><button class="custom-btn btn">Log In</button></a>
+            </li>
+            <li>
+                <a href="../sign-up/index.html"><button class="custom-btn btn">Sign Up</button></a>
+                </li>
         </header>
-        <main>
+        <main class="centro">
+            <h1>Log In</h1> 
             <form action="../index.php" method="post">
                 <input type="email" name="email" placeholder="Email"> <!--Required--><br>
                 <input type="password" name="password" placeholder="Password"> <!--Required--><br>
