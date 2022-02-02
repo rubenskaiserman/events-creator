@@ -66,6 +66,7 @@
     <body>
         <header>
         <li><a href="../events-creator-master/index.php"><img src="images/logo.png" alt="Eventating"></a></li>
+        <button class="custom-btn btn">Log Out</button>
         </header>
         <main>
             <?php
