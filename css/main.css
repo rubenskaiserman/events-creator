@@ -1,50 +1,53 @@
 body{
     margin: 0;
-    background-color: rgb(200, 214, 241);
+    background-color: rgb(208, 217, 247);
 }
 
 header{
     padding: 15px 10px;
     box-shadow: 0px -3px 20px -5px ;
+    background-color: rgb(34, 81, 236);
 }
 header li{
     display: inline;
 }
 
-header span{
-    break-after: avoid;
-    font-size: 300%;
-    font-weight: 900;
-    color: aqua;
+img{
+    height: auto;
+    width: auto;
+    max-height: 72px;
+    max-width: 250px;
 }
 
 button {
     float: right;
     padding: 4px 8px;
-    border: solid aqua 3px;
+    border: solid rgb(208, 217, 247);
     font-size: 150%;
     margin: 5px 10px 0 0;
-    background-color: #222; 
-    color: aqua;
+    background-color: rgb(34, 81, 236); 
+    color: rgb(208, 217, 247);
     font-weight: 800;
+    font-family:sans-serif;
 }
 button:hover{
-    background-color: aqua;
+    background-color: rgb(34, 81, 236);
     color: #222;
 }
 
 #adding{
-    background-color: #222;
+    background-color: rgb(98, 143, 240);
     padding: 50px;
     position: absolute;
     top: 150px;
     left: 100px;
-    box-shadow: 0px 0px 30px 5px #090909;
+    box-shadow: 0px 0px 10px 5px #ffffff;
     display: none;
+    border-radius: 25px;
 }
 input, textarea{
-    background-color: #222;
-    color: #ccc;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border: #ccc 2px solid;
     padding: 10px;
     margin: 0 0 20px 0;
@@ -63,10 +66,10 @@ input, textarea{
 
 
 #add{
-    background-color: aqua;
+    background-color: rgb(34, 81, 236);
     padding: 1px 22px;
     border-radius: 20px 20px 20px 20px;
-    border: solid aqua 3px;
+    border: solid rgb(34, 81, 236) 3px;
     float: right;
     position: absolute;
     top: 45%;
@@ -74,16 +77,59 @@ input, textarea{
     text-align: center;
     font-size: 450%;
     font-weight: 600;
-    color: #222;
+    color: white;
 }
 #add:hover{
-    color: aqua;
-    background-color: #222;
+    color: white;
+    background-color: rgb(67, 115, 219);
 }
 
-div.event{
-    background-color: purple;
-    width: 900px;
-    margin: 20px 20px 40px;
-    padding: 2px 2px 30px 20px;
+.custom-btn {
+    width: 150px;
+    height: 42px;
+    border: 2px solid rgb(255, 255, 255);
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position:relative;
+    border-radius: 12px;
+  }
+
+  .btn {
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .btn:after {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(.1);
+    transform: scale(.1);
+  }
+  .btn:hover {
+    color: rgb(0, 0, 0);
+  }
+  .btn:hover:after {
+    background: rgb(255, 255, 255);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+.centro {
+    text-align: center;
+    height: 200px;
+    line-height: 50px;
+  }
+
+h1 {
+    font-family:sans-serif;
+    color: rgb(255, 255, 255);
+    box-shadow: 0px -3px 10px -5px;
+    background-color: #2161da;
 }
