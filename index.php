@@ -66,12 +66,6 @@
     <body>
         <header>
         <li><a href="../events-creator-master/index.php"><img src="images/logo.png" alt="Eventating"></a></li>
-            <li>
-            <a href="login/index.html"><button class="custom-btn btn">Log In</button></a>
-            </li>
-            <li>
-                <a href="sign-up/index.html"><button class="custom-btn btn">Sign Up</button></a>
-                </li>
         </header>
         <main>
             <?php
