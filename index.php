@@ -65,7 +65,13 @@
     </head>
     <body>
         <header>
-            <li><span>Eventating</span></li>
+        <li><a href="../events-creator-master/index.php"><img src="images/logo.png" alt="Eventating"></a></li>
+            <li>
+            <a href="login/index.html"><button class="custom-btn btn">Log In</button></a>
+            </li>
+            <li>
+                <a href="sign-up/index.html"><button class="custom-btn btn">Sign Up</button></a>
+                </li>
         </header>
         <main>
             <?php
@@ -103,8 +109,8 @@
             <input type="checkbox" onclick="unableTime()" id="all-day"> <span>All day(s)</span> <br>
             <input type="time" name="starthour" value="10:00" class="time"> <br>
             <input type="time" name="endhour" value="23:59" class="time"> <br>
-            <input type="submit">
-            <button onclick="hideForm()">Cancel</button>
+            <input class="custom-btn btn" type="submit">
+            <button class="custom-btn btn" onclick="hideForm()">Cancel</button>
         </form>
 
         <button id="add" onclick="showForm()" >
