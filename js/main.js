@@ -15,6 +15,7 @@ function unableTime(){
     if(document.querySelectorAll(".time")[0].style.display == "flex"){
         document.querySelectorAll(".time")[0].style.display = "none"
         document.querySelectorAll(".time")[1].style.display = "none"
+        document.querySelectorAll(".time")[0].value = '00:00:00';
     } else {
         document.querySelectorAll(".time")[0].style.display = "flex"
         document.querySelectorAll(".time")[1].style.display = "flex"
