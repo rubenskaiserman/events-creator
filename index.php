@@ -3,52 +3,51 @@
     ini_set('display_errors', 1);
 
     $resource = pg_connect("host=localhost port=5432 dbname=events_creator user=creator password=events") or die("could not connect");
-
-    if($_POST != null){
-        if($_POST["is-signing-up"]=="on"){
-            session_start();
-            $user = new User($_POST["email"], $_POST["name"]);
-            $user->createUser($resource, $_POST["password"]);
-            $_SESSION["name"] = $user->name;
-            $_SESSION["email"] = $user->email;
-            $_SESSION["userId"] = $user->userId;
-            setcookie("userId", $_SESSION["userId"],time() + 60 * 60 * 3);
+//     if($_POST != null){
+//         if($_POST["is-signing-up"]=="on"){
+//             session_start();
+//             $user = new User($_POST["email"], $_POST["name"]);
+//             $user->createUser($resource, $_POST["password"]);
+//             $_SESSION["name"] = $user->name;
+//             $_SESSION["email"] = $user->email;
+//             $_SESSION["userId"] = $user->userId;
+//             setcookie("userId", $_SESSION["userId"],time() + 60 * 60 * 3);
             
-        }
-        else if($_POST["is-login-in"]=="on"){
-            pg_send_query($resource, "SELECT * FROM users WHERE email = '{$_POST["email"]}'");
-            $query = pg_get_result($resource);
-            $password = pg_fetch_result($query, 0, "password");
+//         }
+//         else if($_POST["is-login-in"]=="on"){
+//             pg_send_query($resource, "SELECT * FROM users WHERE email = '{$_POST["email"]}'");
+//             $query = pg_get_result($resource);
+//             $password = pg_fetch_result($query, 0, "password");
 
-            if (!$password == $_POST["password"]){
-                header("Location: login/index.html"); 
+//             if (!$password == $_POST["password"]){
+//                 header("Location: login/index.html"); 
 
-            } else {
-                session_start();
-                $user = new User($_POST["email"], pg_fetch_result($query, 0, "name"));
-                $user->userId = pg_fetch_result($query, 0, "userId");
-                $_SESSION["name"] = $user->name;
-                $_SESSION["email"] = $user->email;
-                $_SESSION["userId"] = $user->userId;
-                setcookie("userId",$_SESSION["userId"], time() + 60 * 60 * 3); //Aumentar o tempo depois
+//             } else {
+//                 session_start();
+//                 $user = new User($_POST["email"], pg_fetch_result($query, 0, "name"));
+//                 $user->userId = pg_fetch_result($query, 0, "userId");
+//                 $_SESSION["name"] = $user->name;
+//                 $_SESSION["email"] = $user->email;
+//                 $_SESSION["userId"] = $user->userId;
+//                 setcookie("userId",$_SESSION["userId"], time() + 60 * 60 * 3); //Aumentar o tempo depois
 
-            }
-        }
+//             }
+//         }
 
-    }else if(!isset($_COOKIE["userId"])){
-        header("Location: login/index.html");
-    } else {
-        pg_send_query($resource, "SELECT * FROM users WHERE userid = '{$_COOKIE["userId"]}'");
-        $query = pg_get_result($resource);
-        session_start();
-        $user = new User(pg_fetch_result($query, 0, "email"), pg_fetch_result($query, 0, "name"));
-        $user->userId = $_COOKIE["userId"];
-        $_SESSION["name"] = $user->name;
-        $_SESSION["email"] = $user->email;
-        $_SESSION["userId"] = $user->userId;
-    }
+//     }else if(!isset($_COOKIE["userId"])){
+//         header("Location: login/index.html");
+//     } else {
+//         pg_send_query($resource, "SELECT * FROM users WHERE userid = '{$_COOKIE["userId"]}'");
+//         $query = pg_get_result($resource);
+//         session_start();
+//         $user = new User(pg_fetch_result($query, 0, "email"), pg_fetch_result($query, 0, "name"));
+//         $user->userId = $_COOKIE["userId"];
+//         $_SESSION["name"] = $user->name;
+//         $_SESSION["email"] = $user->email;
+//         $_SESSION["userId"] = $user->userId;
+//     }
 
-?>
+// ?>
 
 
 <html>
