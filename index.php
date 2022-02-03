@@ -29,11 +29,14 @@
             <?php
                 $conn = pg_connect("host=localhost port=5432 dbname=events_creator user=creator password=events") or die("could not connect");
                 pg_send_query($conn, "SELECT * FROM events WHERE userid = '{$_COOKIE["userId"]}'");
-                $res = pg_get_result($resource);
+                $res = pg_get_result($conn);
                 $length = pg_num_rows($res);
                 for($i = 0; $i < $length; $i ++){
                     $title = pg_fetch_result($res, $i, "title");
-                    $date = pg_fetch_result($res, $i, "startdate");
+                    $dates = pg_fetch_result($res, $i, "startdate");
+                    $hours = pg_fetch_result($res, $i, "starthour");
+                    $houre = pg_fetch_result($res, $i, "endhour");
+                    $datee = pg_fetch_result($res, $i, "enddate");
                     $discription = pg_fetch_result($res, $i, "discription");
                     $eventId = pg_fetch_result($res, $i, "eventid");
                     echo "
@@ -45,7 +48,10 @@
 
                         </form>
                          
-                        <p class='start-date'> $date </p> 
+                        <p class='start-date'> $dates </p>
+                        <p class='start-hour'> $hours </p>
+                        <p class='end-date'> $datee </p>
+                        <p class='end-hour'> $houre </p>  
                         <br>
                         <h3 class='discription'> $discription </h3>
                     </div>
