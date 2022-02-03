@@ -3,6 +3,7 @@
     ini_set('display_errors', 1);
 
     $resource = pg_connect("host=localhost port=5432 dbname=events_creator user=creator password=events") or die("could not connect");
+    // echo $_COOKIE["userId"]
 //     if($_POST != null){
 //         if($_POST["is-signing-up"]=="on"){
 //             session_start();

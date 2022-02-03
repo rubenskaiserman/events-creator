@@ -5,11 +5,11 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/main.css">
         <link rel="shortcut icon" href="../images/calendar.png" type="image/png">
-        <script src="js/main.js"></script>
+        <script src="../js/signup.js"></script>
 
 
     </head>
-    <body>
+    <body onload="getError()">
         <header>
             <li><a href="../index.php"><img src="../images/logo.png" alt="Eventating"></a></li>
             <li>
@@ -18,13 +18,13 @@
         </header>
         <main class="centro">
             <h1>Sign Up</h1>
-            <form action="../index.php" method="post">
-                <input type="text" name="name" required placeholder="Name"> <!--Required--> <br>
-                <input type="email" name="email" required placeholder="Email"> <!--Required--><br>
-                <input type="password" name="password" required placeholder="Password"> <!--Required--><br>
-                <input type="password" required placeholder="Repeat your password"><!--Required--> <br>
-                <input type="checkbox" checked name="is-signing-up" hidden id="checkbox">
-                <input type="submit" name="submit" value="Sign In">
+            <span id="error-message"></span>
+            <form action="signup.php" method="post">
+                <input type="text" name="name" required placeholder="Name"><br>
+                <input type="email" name="email" required placeholder="Email"><br>
+                <input type="password" name="password" required placeholder="Password"><br>
+                <input type="password" required placeholder="Repeat your password"><br>
+                <input type="submit" value="Sign In">
             </form>
         </main>
     </body>
