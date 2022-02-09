@@ -38,20 +38,20 @@
                     $discription = pg_fetch_result($res, $i, "discription");
                     $eventId = pg_fetch_result($res, $i, "eventid");
                     echo "
-                    <div class='event'>
-                        <h2 class='title'> $title </h2>
+                    <div id='event'>
+                        <h2 id='title'> $title </h2>
                         <form method='post' action='delete-event.php'>
                             <input type='text' hidden value='$eventId' name='event'>
-                            <input type='submit' value='delete'>
+                            <input class='custom-btn btn' type='submit' value='DELETE'>
 
                         </form>
                          
-                        <p class='start-date'> $dates </p>
-                        <p class='start-hour'> $hours </p>
-                        <p class='end-date'> $datee </p>
-                        <p class='end-hour'> $houre </p>  
+                        <p class='start-date'> start date: $dates </p>
+                        <p class='start-hour'> start time: $hours </p>
+                        <p class='end-date'> end day: $datee </p>
+                        <p class='end-hour'> end time: $houre </p>  
                         <br>
-                        <h3 class='discription'> $discription </h3>
+                        <h3 id='discription'> $discription </h3>
                     </div>
                     ";
                 }

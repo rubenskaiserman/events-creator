@@ -56,14 +56,19 @@ input, textarea{
     display: flex;
 }
 #title{
-    width: 300px;
+    font-family:sans-serif;
 }
 #discription{
-    width: 600px;
-    height: 100px;
+    font-family:sans-serif;
     resize: none;
 }
-
+#event {
+    text-align: center;
+    font-family:Impact, Haettenschweiler, sans-serif;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 5px 10px -5px;
+    background-color: rgb(148, 168, 233);    
+}
 
 #add{
     background-color: rgb(34, 81, 236);
