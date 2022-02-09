@@ -20,7 +20,7 @@
     </head>
     <body>
         <header>
-        <li><a href="../events-creator-master/index.php"><img src="images/logo.png" alt="Eventating"></a></li>
+        <li><a href="index.php"><img src="images/logo.png" alt="Eventating"></a></li>
         <a href="logout/index.php"><button class="custom-btn btn">Log Out</button></a>
         </header>
         <main>
