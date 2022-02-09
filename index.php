@@ -1,6 +1,4 @@
 <?php 
-    include 'classes/classes.php'; 
-    ini_set('display_errors', 1);
 
     if(!isset($_COOKIE["userId"])){
         header("Location: login/index.html");
