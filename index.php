@@ -1,5 +1,4 @@
 <?php 
-
     if(!isset($_COOKIE["userId"])){
         header("Location: login/index.html");
     }
