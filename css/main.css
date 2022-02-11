@@ -76,7 +76,7 @@ input, textarea{
     border-radius: 20px 20px 20px 20px;
     border: solid rgb(34, 81, 236) 3px;
     float: right;
-    position: absolute;
+    position: fixed;
     top: 45%;
     right: 20px;
     text-align: center;
