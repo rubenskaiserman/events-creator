@@ -2,7 +2,7 @@
 
 Esse foi o projeto final da minha matéria de desemvolvimento web.
 
-Básicamente o trabalho proposto era a construção de um sistema web que utilizasse HTML, CSS, JavaScript, Php e um banco de dados relacional, podendo ser utilizado MySQL, que é ensinado nas aulas de banco de dados, ou qualquer outro. Nesse projeto foi utilizado o PostgreSQL.
+Basicamente o trabalho proposto era a construção de um sistema web que utilizasse HTML, CSS, JavaScript, Php e um banco de dados relacional, podendo ser utilizado MySQL, que é ensinado nas aulas de banco de dados, ou qualquer outro. Nesse projeto foi utilizado o PostgreSQL.
 
 Como um requisito era a criação de um usuário e a possíbilidade de logar como esse usuário.
 
